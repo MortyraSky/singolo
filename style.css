@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+a {
+    padding: 10px;
+}
+
+.header, .our-service, .main {
+    font-size: 1.5rem;
+    /*overflow: hidden;*/
+}
+
+.header, .our-service {
+    height: 100px;
+    background: #666;
+    color: white;
+}
+
+.container {
+    height: calc(100% - 200px);
+}
