@@ -9,6 +9,12 @@ body, html{
     max-width: 1020px;
     margin: auto;
 }
+
+#checkbox-menu,
+.toggle {
+    display: none;
+}
+
 nav {
     margin: auto;
     width: 100%;
@@ -131,19 +137,22 @@ nav {
 
 .services-cards{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-row-gap: 10px;
-    grid-column-gap: 0px;
+    /*grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
+    grid-template-rows: repeat(2, 96px);
+    grid-row-gap: 38px;
+    grid-column-gap: 10px;
     margin-right: 40px;
     margin-left: 40px;
+    margin-bottom: 30px;
 }
 
 .card{
     max-width: 300px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 38px;
+    /*margin-bottom: 38px;*/
 }
 .card img{
     max-width: 59px;
@@ -193,8 +202,10 @@ nav {
 
 .portfolio-images{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    /*grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(216px, 1fr));
+    grid-template-rows: repeat(3, 184px);
     grid-row-gap: 18px;
     grid-column-gap: 18px;
     padding-left: 10px;
@@ -257,9 +268,10 @@ nav {
 }
 
 .about-container{
-    height: 728px;
+    /*height: 728px;*/
     margin-left: 30px;
     margin-right: 30px;
+    margin-bottom: 30px;
 }
 
 .about-text{
@@ -323,7 +335,7 @@ nav {
     width: 100%;
     background: #f06c64;
     border-bottom: 5px solid #ea676b;
-    height: 655px;
+    /*height: 655px;*/
 }
 
 .quote-wrapper{
@@ -373,14 +385,15 @@ nav {
     line-height: 21.56px;
 }
 
-.quote-container input[type=text], input[type=email]{
+.quote-form input[type=text], input[type=email], input[type=submit]{
     height: 40px;
     margin-bottom: 15px;
 }
 
-.quote-container textarea{
+.quote-form textarea{
     height: 200px;
     padding-top: 10px;
+    margin-bottom: 15px;
     resize: none;
 }
 .form-input::placeholder{
@@ -397,14 +410,15 @@ nav {
     outline: none;
 }
 
-.submit{
+
+/*.submit{
     margin-top: 10px;
     height: 30px;
     width: 100px;
     margin-bottom: 10px;
     position: relative;
     left: 45%;
-}
+}*/
 .feedback-container{
     margin-left: 10px;
 }
@@ -492,4 +506,145 @@ nav {
 
 .footer-social a:first-child i:hover{
     color: #4B0082;
+}
+
+@media screen and (max-width: 765px) {
+
+    .toggle {
+        clear: both;
+        display: block;
+        text-align: center;
+        font-style: 18px;
+        line-height: 40px;
+        width: 100%;
+        color: white;
+        background: #2d303a;
+        transition: all .1s linear;
+    }
+
+    .toggle:hover {
+        background: #ADD8E6;
+    }
+
+    #checkbox-menu:checked+label .touch li {
+        opacity: 1;
+        visibility: visible;
+        transition: all .7s linear;
+    }
+
+    #checkbox-menu:checked+label .touch {
+        height: 350px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 0;
+        transition: height .3s linear;
+    }
+
+    .menu li {
+        display: flex;
+        align-self: center;
+        width: 95%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .menu span:not(:first-child){
+        visibility: hidden;
+    }
+
+    .menu li a {
+        width: 95%;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+    }
+
+    .menu li a.logo {
+        font-size: 21px;
+        margin-right: 0;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .menu li a.contact {
+        margin-right: 0;
+    }
+
+    .card{
+        margin: 0;
+    }
+
+    .portfolio-images{
+        justify-items: center;
+    }
+
+    .tagsList{
+        justify-content: end;
+    }
+
+    .about-container{
+        overflow: hidden;
+    }
+    .agents-cards{
+        flex-direction: column;
+    }
+
+    .agent-card{
+        margin-bottom: 15px;
+    }
+
+    .agent-info h4{
+        margin-top: 10px;
+    }
+    
+    .agent-block p{
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    
+    .social i{
+        margin-top: 15px;
+    }
+
+    .quote-header{
+        padding-top: 35px;
+    }
+    
+    .quote-wrapper .quote-text{
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .quote-container{
+        margin-top: 25px;
+        flex-direction: column;
+    }
+
+    .form-input{
+        width: 100%;
+        align-items: center;
+    }
+    
+    .quote-container input[type=text], input[type=email], input[type=submit]{
+        height: 30px;
+    }
+    
+    .quote-container textarea{
+        height: 100px;
+    }
+
+    .submit{
+        width: 50%;
+        position: relative;
+        left: 25%;
+    }
+
+    .horizontal-phone{
+        display: none;
+    }
 }
